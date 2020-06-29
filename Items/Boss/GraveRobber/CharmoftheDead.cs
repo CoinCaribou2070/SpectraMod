@@ -3,20 +3,18 @@ using Terraria.ID;
 
 namespace SpectraMod.Items.Boss.GraveRobber
 {
-    public class UnluckyTomb : SpectraItem
+    public class CharmoftheDead : SpectraItem
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Unlucky Gravestone");
-            Tooltip.SetDefault("'An unlucky downfall...'" +
-                               "\nZombies and demon eyes become passive");
+            DisplayName.SetDefault("Charm of the Undead");
+            Tooltip.SetDefault("'Anything but charming.'" +
+                               "\nCommon zombies become passive");
         }
 
         public override void SafeSetDefaults()
         {
-            professional = true;
-
-            item.value = Item.sellPrice(0, 6, 6, 6);
+            item.value = Item.sellPrice(0, 1, 0, 0);
             item.accessory = true;
             item.rare = ItemRarityID.White;
             item.expert = true;
@@ -24,7 +22,7 @@ namespace SpectraMod.Items.Boss.GraveRobber
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            player.GetModPlayer<SpectraPlayer>().UnluckyTombEffect = true;
+            player.GetModPlayer<SpectraPlayer>().CharmoftheDeadEffect = true;
         }
     }
 }

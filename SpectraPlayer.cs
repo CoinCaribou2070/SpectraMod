@@ -15,6 +15,7 @@ namespace SpectraMod
         #region ACC_BOOLS
         public bool UnluckyTombEffect;
         public bool GreaterPygmyNecklaceEffect;
+        public bool CharmoftheDeadEffect;
         #endregion
 
         #region MISC_EFFECTS_BOOLS
@@ -43,6 +44,7 @@ namespace SpectraMod
             Hated = false;
             DirtSetBonus = false;
             AngerSetBonus = false;
+            CharmoftheDeadEffect = false;
 
             AllPassive = false;
         }
@@ -76,6 +78,29 @@ namespace SpectraMod
                 player.npcTypeNoAggro[NPCID.ArmedZombie] = true;
                 player.npcTypeNoAggro[NPCID.ArmedZombieCenx] = true;
                 player.npcTypeNoAggro[NPCID.ArmedZombieEskimo] = true;
+                player.npcTypeNoAggro[NPCID.ArmedZombiePincussion] = true;
+                player.npcTypeNoAggro[NPCID.ArmedZombieSlimed] = true;
+                player.npcTypeNoAggro[NPCID.ArmedZombieSwamp] = true;
+                player.npcTypeNoAggro[NPCID.ArmedZombieTwiggy] = true;
+                player.npcTypeNoAggro[NPCID.BaldZombie] = true;
+                player.npcTypeNoAggro[NPCID.DoctorBones] = true;
+                player.npcTypeNoAggro[NPCID.BloodZombie] = true;
+                player.npcTypeNoAggro[NPCID.TheGroom] = true;
+                player.npcTypeNoAggro[NPCID.TheBride] = true;
+            }
+
+            if (CharmoftheDeadEffect)
+            {
+                player.npcTypeNoAggro[NPCID.Zombie] = true;
+                player.npcTypeNoAggro[NPCID.ZombieDoctor] = true;
+                player.npcTypeNoAggro[NPCID.ZombieElf] = true;
+                player.npcTypeNoAggro[NPCID.ZombieElfBeard] = true;
+                player.npcTypeNoAggro[NPCID.ZombieElfGirl] = true;
+                player.npcTypeNoAggro[NPCID.ZombiePixie] = true;
+                player.npcTypeNoAggro[NPCID.ZombieSuperman] = true;
+                player.npcTypeNoAggro[NPCID.ZombieXmas] = true;
+                player.npcTypeNoAggro[NPCID.ArmedZombie] = true;
+                player.npcTypeNoAggro[NPCID.ArmedZombieCenx] = true;
                 player.npcTypeNoAggro[NPCID.ArmedZombiePincussion] = true;
                 player.npcTypeNoAggro[NPCID.ArmedZombieSlimed] = true;
                 player.npcTypeNoAggro[NPCID.ArmedZombieSwamp] = true;
