@@ -11,14 +11,30 @@ namespace SpectraMod.Projectiles.Weapons.Prism.Death
 
         protected override float BeamColorHue()
         {
-            Main.NewText(Main.player[projectile.owner].name);
-            switch (Main.player[projectile.owner].name)
-            {
-                case "Oreo":
-                    Main.NewText("o");
-                    return 0.7f;
-                default:
+            //Main.NewText(Main.player[projectile.owner].name);
+            //string name = Main.player[projectile.owner].name;
                     return 0f;
+
+        }
+
+        private float _calcPboneColour()
+        {
+            switch (BeamID)
+            {
+                case 0:
+                case 1:
+                    return 0.7f;
+                case 2:
+                case 3:
+                    return 0.5f;
+                case 4:
+                case 5:
+                    return 0.6f;
+                case 6:
+                case 7:
+                    return 0f;
+                default:
+                    return 0.65f;
             }
         }
 
@@ -44,7 +60,12 @@ namespace SpectraMod.Projectiles.Weapons.Prism.Death
 
         protected override int ParentType() => ModContent.ProjectileType<DeathHoldout>();
 
-        public override Color GetInnerBeamColor() => new Color(255, 100, 100);
+        public override Color GetInnerBeamColor()
+        {
+            if (Main.player[projectile.owner].name == "pbone")
+                return Color.SeaGreen;
+            return Color.Red;
+        }
 
         public override void ModifyHitNPC(NPC target, ref int damage, ref float knockback, ref bool crit, ref int hitDirection)
         {
