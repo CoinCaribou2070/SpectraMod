@@ -95,6 +95,11 @@ namespace SpectraMod.Projectiles.Weapons.Prism
             projectile.CloneDefaults(ProjectileID.LastPrism);
         }
 
+        public override bool? CanHitNPC(NPC target)
+        {
+            return false;
+        }
+
         public override void AI()
         {
             Player player = Main.player[projectile.owner];
