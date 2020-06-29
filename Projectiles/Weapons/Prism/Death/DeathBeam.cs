@@ -28,12 +28,9 @@ namespace SpectraMod.Projectiles.Weapons.Prism.Death
                     return Main.rgbToHsl(Main.DiscoColor).X;
 
                 case "Stevie":
-                    return Main.rgbToHsl(
-                        new AnimatedColor(
-                            new AnimatedColor(Color.Yellow, Color.Pink).GetColor(),
-                            new AnimatedColor(
-                                new AnimatedColor(Color.Red, Color.Blue).GetColor(), Color.Transparent).GetColor()).GetColor()
-                    ).X;
+                    if (Main.rgbToHsl(new AnimatedColor(Color.Red, Color.Orange).GetColor()).X < 0.005f)
+                        return 0.005f;
+                    return Main.rgbToHsl(new AnimatedColor(Color.Red, Color.Orange).GetColor()).X;
 
                 case "Martin":
                     return Main.rgbToHsl(new AnimatedColor(new Color(46, 43, 226), new Color(255, 0, 0)).GetColor()).X;
