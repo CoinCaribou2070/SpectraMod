@@ -1,9 +1,12 @@
-﻿using System;
+﻿using SpectraMod.Items.Boss.GraveRobber;
+using SpectraMod.NPCs.Boss.GraveRobber;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Terraria;
+using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace SpectraMod.NPCs
@@ -22,6 +25,17 @@ namespace SpectraMod.NPCs
                 {
                     if (!npcLooted)
                     {
+                        if (SpectraWorld.professionalMode)
+                        {
+                            switch (npc.type)
+                            {
+                                case NPCID.KingSlime:
+                                    break;
+                            }
+
+                            if (npc.type == ModContent.NPCType<GraveRobber>())
+                                npc.DropItemInstanced(npc.position, npc.Size, ModContent.ItemType<UnluckyTomb>());
+                        }
                         npcLooted = true;
                         npc.NPCLoot();
                     }

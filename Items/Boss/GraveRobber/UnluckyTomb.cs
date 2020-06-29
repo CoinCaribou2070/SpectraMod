@@ -9,14 +9,14 @@ namespace SpectraMod.Items.Boss.GraveRobber
         {
             DisplayName.SetDefault("Unlucky Gravestone");
             Tooltip.SetDefault("'The robber's downfall...'" +
-                               "\nMakes some creatures of the night passive");
+                               "\nZombies and demon eyes become friendly");
         }
 
         public override void SafeSetDefaults()
         {
             item.value = Item.sellPrice(0, 6, 6, 6);
             item.accessory = true;
-            item.rare = ItemRarityID.Green;
+            item.rare = ItemRarityID.White;
             item.expert = true;
         }
 
