@@ -237,7 +237,7 @@ namespace SpectraMod
                 case 537:
                     if (SpectraWorld.professionalMode)
                         if (Main.rand.NextBool(3))
-                            player.AddBuff(BuffID.Slimed, Main.rand.Next(3, 11));
+                            player.AddBuff(BuffID.Slimed, Main.rand.Next(3, 11) * 60);
                     break;
             }
             base.OnHitByNPC(npc, damage, crit);

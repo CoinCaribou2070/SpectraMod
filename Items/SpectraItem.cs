@@ -33,7 +33,7 @@ namespace SpectraMod.Items
             
         }
 
-        public void SafeModifyTooltips(List<TooltipLine> tooltips)
+        public virtual void SafeModifyTooltips(List<TooltipLine> tooltips)
         {
         }
 

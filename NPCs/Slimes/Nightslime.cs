@@ -40,9 +40,9 @@ namespace SpectraMod.NPCs.Slimes
             if (SpectraWorld.professionalMode)
             {
                 if (Main.rand.NextBool(3))
-                    target.AddBuff(BuffID.Slimed, Main.rand.Next(3, 11));
+                    target.AddBuff(BuffID.Slimed, Main.rand.Next(3, 11) * 60);
                 if (Main.rand.NextBool(5))
-                    target.AddBuff(BuffID.Darkness, Main.rand.Next(2, 4));
+                    target.AddBuff(BuffID.Darkness, Main.rand.Next(2, 4) * 60);
             }
             base.OnHitPlayer(target, damage, crit);
         }
