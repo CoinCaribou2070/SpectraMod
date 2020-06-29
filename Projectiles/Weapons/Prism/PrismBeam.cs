@@ -357,7 +357,7 @@ namespace SpectraMod.Projectiles.Weapons.Prism
 		}
 
 		// Inner beams are always pure white so that they act as a "blindingly bright" center to each laser.
-		private Color GetInnerBeamColor() => Color.White;
+		public virtual Color GetInnerBeamColor() => Color.White;
 
 		private void ProduceBeamDust(Color beamColor)
 		{

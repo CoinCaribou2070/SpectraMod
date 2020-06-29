@@ -18,11 +18,11 @@ namespace SpectraMod.Projectiles.Weapons.Prism.Death
                     Main.NewText("o");
                     return 0.7f;
                 default:
-                    return 1f;
+                    return 0f;
             }
         }
 
-        protected override float BeamColorLightness() => 0.25f;
+        protected override float BeamColorLightness() => 0f;
 
         protected override float BeamColorSaturation() => 0.7f;
 
@@ -43,6 +43,8 @@ namespace SpectraMod.Projectiles.Weapons.Prism.Death
         protected override PrismHoldout Parent() => new DeathHoldout();
 
         protected override int ParentType() => ModContent.ProjectileType<DeathHoldout>();
+
+        public override Color GetInnerBeamColor() => new Color(255, 100, 100);
 
         public override void ModifyHitNPC(NPC target, ref int damage, ref float knockback, ref bool crit, ref int hitDirection)
         {
