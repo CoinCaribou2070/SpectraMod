@@ -38,5 +38,12 @@ namespace SpectraMod.Items
                 return false;
             return base.ConsumeAmmo(item, player);
         }
+
+        public override void ModifyHitNPC(Item item, Player player, NPC target, ref int damage, ref float knockBack, ref bool crit)
+        {
+            SpectraPlayer spectraPlayer = player.GetModPlayer<SpectraPlayer>();
+
+            if (crit) damage = (int)(damage * spectraPlayer.CritDamage);
+        }
     }
 }

@@ -19,9 +19,10 @@ namespace SpectraMod
         public bool CharmoftheDeadEffect;
         #endregion
 
-        #region MISC_EFFECTS_BOOLS
+        #region MISC_EFFECTS
         public bool AllPassive;
         public bool Hated;
+        public float CritDamage
         #endregion
 
         #region ARMOR_BOOLS
@@ -46,6 +47,7 @@ namespace SpectraMod
             DirtSetBonus = false;
             AngerSetBonus = false;
             CharmoftheDeadEffect = false;
+            CritDamage = 1f;
 
             AllPassive = false;
         }
