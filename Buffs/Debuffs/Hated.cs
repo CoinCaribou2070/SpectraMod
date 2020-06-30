@@ -10,7 +10,7 @@ namespace SpectraMod.Buffs.Debuffs
         public override void SetDefaults()
         {
             DisplayName.SetDefault("Hated");
-            Description.SetDefault("Slower");
+            Description.SetDefault("Slower and loosing life");
             Main.debuff[Type] = true;
             Main.pvpBuff[Type] = true;
             Main.buffNoSave[Type] = true;

@@ -53,11 +53,6 @@ namespace SpectraMod.Items
                 }
                 name.overrideColor = customColor;
             }
-
-            if (professional)
-            {
-                tooltips.Add(new TooltipLine(mod, "Spectra:Professional", "Professional"));
-            }
         }
     }
 

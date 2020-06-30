@@ -176,12 +176,18 @@ namespace SpectraMod
 
         public override void UpdateBadLifeRegen()
         {
+            Main.NewText(Hated);
             if (Hated)
             {
                 player.lifeRegen = 0;
                 player.lifeRegenTime = 0;
                 player.lifeRegen -= 4;
             }
+        }
+
+        public override void UpdateDead()
+        {
+            Hated = false;
         }
 
         public override void OnHitByNPC(NPC npc, int damage, bool crit)

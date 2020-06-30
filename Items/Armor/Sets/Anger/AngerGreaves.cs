@@ -1,14 +1,9 @@
 ﻿using SpectraMod.Items.Boss.GraveRobber;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace SpectraMod.Items.Armor.Sets.Danger
+namespace SpectraMod.Items.Armor.Sets.Anger
 {
     [AutoloadEquip(EquipType.Legs)]
     public class AngerGreaves : SpectraItem

@@ -1,4 +1,5 @@
-﻿using Terraria;
+﻿using SpectraMod.Buffs.Debuffs;
+using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -9,7 +10,7 @@ namespace SpectraMod.Items.Boss.GraveRobber
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Grave Robber's HelmS");
+            DisplayName.SetDefault("Grave Robber's Helm");
             Tooltip.SetDefault("33% more damage and crit chance" +
                                "\nYou are hated");
         }
@@ -28,6 +29,8 @@ namespace SpectraMod.Items.Boss.GraveRobber
             player.magicCrit += 33;
             player.rangedCrit += 33;
             player.thrownCrit += 33;
+
+            player.AddBuff(ModContent.BuffType<Hated>(), -1);
         }
     }
 }
