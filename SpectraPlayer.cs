@@ -196,6 +196,11 @@ namespace SpectraMod
                 {
                     player.AddBuff(BuffID.Wet, 30 * 60);
                 }
+
+                if (!Main.dayTime)
+                {
+                    player.AddBuff(BuffID.Darkness, 1);
+                }
             }
 
             SkyManager.Instance.Activate("SpectraMod:DoomSlime");

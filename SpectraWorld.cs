@@ -20,10 +20,10 @@ namespace SpectraMod
         {
             if (professionalMode)
             {
-                Main.expertDamage = 3f;
+                Main.expertDamage = 3.5f;
                 Main.expertKnockBack = 0.8f;
                 Main.expertDebuffTime = 3f;
-                Main.expertLife = 3f;
+                Main.expertLife = 2.5f;
                 Main.expertNPCDamage = 2.5f;
             }
             else
