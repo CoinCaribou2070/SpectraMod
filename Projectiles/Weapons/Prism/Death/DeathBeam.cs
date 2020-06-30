@@ -24,7 +24,8 @@ namespace SpectraMod.Projectiles.Weapons.Prism.Death
 
                 case "pbone":
                     //TD: Decide colour (mixture?)
-                    return Main.rgbToHsl(new AnimatedColor(Color.SeaGreen, Color.Green).GetColor()).X;
+                    //return Main.rgbToHsl(new AnimatedColor(Color.SeaGreen, Color.Green).GetColor()).X;
+                    return Main.rgbToHsl(Main.DiscoColor).X;
 
                 case "Stevie":
                     return Main.rgbToHsl(
@@ -33,9 +34,17 @@ namespace SpectraMod.Projectiles.Weapons.Prism.Death
                             new AnimatedColor(
                                 new AnimatedColor(Color.Red, Color.Blue).GetColor(), Color.Transparent).GetColor()).GetColor()
                     ).X;
-            }
 
-            return 0f;
+                case "Martin":
+                    return Main.rgbToHsl(new AnimatedColor(new Color(46, 43, 226), new Color(255, 0, 0)).GetColor()).X;
+
+                case "CoolDoge":
+                    Main.NewText("D");
+                    return Main.rgbToHsl(Color.Black).X;
+
+                default:
+                    return 0f;
+            }
         }
 
         protected override float BeamColorLightness() => BeamColorHue() == 0f ? 0f : 0.3f;
@@ -63,7 +72,7 @@ namespace SpectraMod.Projectiles.Weapons.Prism.Death
         public override Color GetInnerBeamColor()
         {
             float h = BeamColorHue();
-            return h == 0f ? Color.Red : Color.White;
+            return h == 0f && Main.player[projectile.owner].name != "CoolDoge" ? Color.Red : h == Main.rgbToHsl(Color.Black).X ? Color.Black : Color.White;
         }
 
         public override void ModifyHitNPC(NPC target, ref int damage, ref float knockback, ref bool crit, ref int hitDirection)
