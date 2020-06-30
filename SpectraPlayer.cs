@@ -22,7 +22,7 @@ namespace SpectraMod
         #region MISC_EFFECTS
         public bool AllPassive;
         public bool Hated;
-        public float CritDamage
+        public float CritDamage;
         #endregion
 
         #region ARMOR_BOOLS
