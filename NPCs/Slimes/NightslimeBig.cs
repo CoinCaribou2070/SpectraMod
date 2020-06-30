@@ -20,10 +20,8 @@ namespace SpectraMod.NPCs.Slimes
             banner = npc.type;
             bannerItem = ModContent.ItemType<NightslimeBanner>();
 
-            npc.damage = Main.hardMode ? 64 : 48;
-
-            if (!Main.hardMode) npc.lifeMax = 124;
-            else npc.lifeMax = NPC.downedPlantBoss ? 506 : 248;
+            npc.damage = NPC.downedPlantBoss ? 64 : 48;
+            npc.lifeMax = NPC.downedPlantBoss ? 506 : 248;
 
             npc.HitSound = SoundID.NPCHit1;
             npc.DeathSound = SoundID.NPCDeath1;
@@ -50,7 +48,7 @@ namespace SpectraMod.NPCs.Slimes
 
         public override float SpawnChance(NPCSpawnInfo spawnInfo)
         {
-            return (SpawnCondition.OverworldNightMonster.Chance > 0f) ? SpawnCondition.OverworldNightMonster.Chance / 2.5f : 0f;
+            return (SpawnCondition.OverworldNightMonster.Chance > 0f && Main.hardMode) ? SpawnCondition.OverworldNightMonster.Chance / 2.5f : 0f;
         }
     }
 }

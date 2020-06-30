@@ -39,8 +39,10 @@ namespace SpectraMod.NPCs.Boss.GraveRobber
         {
             int zombiesChosenNormal = Main.rand.Next(0, SpectraHelper.Pool_ZombiesNormal.Length);
             int zombiesChosenExpert = Main.rand.Next(0, SpectraHelper.Pool_ZombiesExpert.Length);
+            int zombiesChosenPro = Main.rand.Next(0, SpectraHelper.Pool_ZombiesPro.Length);
             if (Main.rand.NextBool(4) && !Main.expertMode) NPC.NewNPC((int)npc.Center.X, (int)npc.Center.Y, SpectraHelper.Pool_ZombiesNormal[zombiesChosenNormal]);
             if (Main.rand.NextBool(3) && Main.expertMode) NPC.NewNPC((int)npc.Center.X, (int)npc.Center.Y, SpectraHelper.Pool_ZombiesExpert[zombiesChosenExpert]);
+            if (Main.rand.NextBool(3) && SpectraWorld.professionalMode) NPC.NewNPC((int)npc.Center.X, (int)npc.Center.Y, SpectraHelper.Pool_ZombiesPro[zombiesChosenPro]);
         }
 
         public override void OnHitByProjectile(Projectile projectile, int damage, float knockback, bool crit)
@@ -49,6 +51,11 @@ namespace SpectraMod.NPCs.Boss.GraveRobber
             int zombiesChosenExpert = Main.rand.Next(0, SpectraHelper.Pool_ZombiesExpert.Length);
             if (Main.rand.NextBool(6) && !Main.expertMode) NPC.NewNPC((int)npc.Center.X, (int)npc.Center.Y, SpectraHelper.Pool_ZombiesNormal[zombiesChosenNormal]);
             if (Main.rand.NextBool(5) && Main.expertMode) NPC.NewNPC((int)npc.Center.X, (int)npc.Center.Y, SpectraHelper.Pool_ZombiesExpert[zombiesChosenExpert]);
+        }
+
+        public override void HitEffect(int hitDirection, double damage)
+        {
+            for (int d = 0; d < 10; d++) Dust.NewDust(npc.position, npc.width, npc.height, DustID.Blood, hitDirection, 1);
         }
 
         public override void NPCLoot()

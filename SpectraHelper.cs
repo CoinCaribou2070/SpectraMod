@@ -27,6 +27,12 @@ namespace SpectraMod
             NPCID.PincushionZombie, NPCID.BigPincushionZombie, NPCID.ArmedZombiePincussion,
             NPCID.BaldZombie, NPCID.BigBaldZombie, NPCID.ArmedZombiePincussion
         };
+        public static int[] Pool_ZombiesPro = {
+            NPCID.ArmedZombie, NPCID.ArmedZombieCenx, NPCID.ArmedZombiePincussion,
+            NPCID.ArmedZombieSlimed, NPCID.ArmedZombieSwamp, NPCID.ArmedZombieTwiggy,
+            NPCID.BloodZombie, NPCID.BloodZombie, NPCID.BloodZombie,
+            NPCID.BloodZombie, NPCID.BloodZombie, NPCID.BloodZombie
+        };
       
         public static string SpectraValueToName(int coinValue)
         {
