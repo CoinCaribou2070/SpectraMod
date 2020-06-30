@@ -29,7 +29,6 @@ namespace SpectraMod.Skies.DoomSlime
             {
                 spriteBatch.Draw(Main.blackTileTexture, new Rectangle(0, 0, Main.screenWidth, Main.screenHeight), Color.Black);
             }
-
         }
 
         public override bool IsActive()
