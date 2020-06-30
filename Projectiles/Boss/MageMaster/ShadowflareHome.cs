@@ -23,6 +23,8 @@ namespace SpectraMod.Projectiles.Boss.MageMaster
 
         public override void AI()
         {
+            projectile.rotation++;
+
             Player target = Main.player[(int)Target];
             Vector2 dir = projectile.DirectionTo(target.Center);
             dir.Normalize();

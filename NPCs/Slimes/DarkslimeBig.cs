@@ -20,10 +20,8 @@ namespace SpectraMod.NPCs.Slimes
             banner = npc.type;
             bannerItem = ModContent.ItemType<DarkslimeBanner>();
 
-            npc.damage = 128;
-
-            if (!Main.hardMode) npc.lifeMax = 256;
-            else npc.lifeMax = NPC.downedPlantBoss ? 1024 : 512;
+            npc.damage = 108;
+            npc.lifeMax = 2400;
 
             npc.HitSound = SoundID.NPCHit1;
             npc.DeathSound = SoundID.NPCDeath1;
@@ -41,11 +39,11 @@ namespace SpectraMod.NPCs.Slimes
             base.OnHitPlayer(target, damage, crit);
         }
 
-        public override void NPCLoot()
+        /*public override void NPCLoot()
         {
             int amount = Main.expertMode ? 4 : 3;
             Item.NewItem(npc.getRect(), ModContent.ItemType<Items.Materials.Gel.DoomGel>(), amount);
-        }
+        }*/
 
         /*public override float SpawnChance(NPCSpawnInfo spawnInfo)
         {

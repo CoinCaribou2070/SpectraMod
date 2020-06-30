@@ -24,8 +24,6 @@ namespace SpectraMod.Items.Boss.GraveRobber
 
         public override void OpenBossBag(Player player)
         {
-            player.TryGettingDevArmor();
-
             Item.NewItem(player.getRect(), ModContent.ItemType<HatredBar>(), Main.rand.Next(17) + 2);
             //Item.NewItem(player.getRect(), ModContent.ItemType<UnluckyTomb>());
             Item.NewItem(player.getRect(), ModContent.ItemType<GraverobberMachete>());

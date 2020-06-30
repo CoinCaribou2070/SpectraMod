@@ -20,9 +20,9 @@ namespace SpectraMod.Projectiles.Weapons.Prism.Death
 
         public override Color DrawColor() => new Color(50, 50, 50);
 
-        public override float MaxManaConsumptionDelay() => 10;
+        public override float MaxManaConsumptionDelay() => 5;
 
-        public override float MinManaConsumptionDelay() => 5;
+        public override float MinManaConsumptionDelay() => 3;
 
         public override int NumAnimationFrames() => 5;
 

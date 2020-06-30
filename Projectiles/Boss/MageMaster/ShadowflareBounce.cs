@@ -44,6 +44,7 @@ namespace SpectraMod.Projectiles.Boss.MageMaster
 
         public override void AI()
         {
+            projectile.rotation++;
             if (Main.rand.NextBool(6)) Dust.NewDust(projectile.Center, 24, 24, DustID.Shadowflame);
         }
     }

@@ -28,7 +28,8 @@ namespace SpectraMod.NPCs.Boss.MageMaster
             npc.noGravity = true;
             npc.noTileCollide = true;
             npc.alpha = 85;
-            npc.HitSound = SoundID.NPCHit28;
+            npc.HitSound = SoundID.NPCHit52;
+            npc.DeathSound = SoundID.NPCDeath60;
             RageTimes = 77;
 
             npc.buffImmune[BuffID.Confused] = true;

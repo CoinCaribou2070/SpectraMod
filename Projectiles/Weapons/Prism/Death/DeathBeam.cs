@@ -87,6 +87,7 @@ namespace SpectraMod.Projectiles.Weapons.Prism.Death
             Vector2 dimensions = new Vector2(projectile.velocity.Length() * BeamLength, projectile.width * projectile.scale);
             for (int i = 0; i < Main.npc.Length; i++)
             {
+                if (Main.npc[i].type == NPCID.MoonLordHand || Main.npc[i].type == NPCID.MoonLordHead) continue;
                 float _ = float.NaN;
                 Vector2 beamEndPos = projectile.Center + projectile.velocity * BeamLength;
                 if (Collision.CheckAABBvLineCollision(Main.npc[i].getRect().TopLeft(), Main.npc[i].getRect().Size(), projectile.Center, beamEndPos, BeamHitboxCollisionWidth() * projectile.scale, ref _))

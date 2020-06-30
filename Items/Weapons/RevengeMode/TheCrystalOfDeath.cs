@@ -21,7 +21,7 @@ namespace SpectraMod.Items.Weapons.RevengeMode
 
             item.CloneDefaults(ItemID.LastPrism);
             item.magic = true;
-            item.mana = 100;
+            item.mana = 50;
             item.damage = 9999;
             item.crit = 9999;
             item.useTime = 1;
