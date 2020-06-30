@@ -21,11 +21,6 @@ namespace SpectraMod.Items.Armor
             item.rare = ItemRarityID.Green;
         }
 
-        public override void UpdateVanity(Player player, EquipType type)
-        {
-            player.AddBuff(BuffID.Sunflower, 60);
-        }
-
         public override void UpdateEquip(Player player)
         {
             player.AddBuff(BuffID.Sunflower, 60);
@@ -36,6 +31,9 @@ namespace SpectraMod.Items.Armor
         {
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(ModContent.ItemType<Items.Materials.Bars.DelightedBar>(), 8);
+            recipe.AddTile(TileID.Anvils);
+            recipe.SetResult(this);
+            recipe.AddRecipe();
         }
     }
 }

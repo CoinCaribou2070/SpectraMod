@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 using SpectraMod.Items.Consumables;
 using SpectraMod.NPCs.Slimes;
 using Terraria;
+using Terraria.Graphics.Effects;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
@@ -196,6 +197,8 @@ namespace SpectraMod
                     player.AddBuff(BuffID.Wet, 30 * 60);
                 }
             }
+
+            SkyManager.Instance.Activate("SpectraMod:DoomSlime");
         }
 
         public override void PostUpdateBuffs()

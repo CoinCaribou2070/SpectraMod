@@ -27,7 +27,7 @@ namespace SpectraMod.Items
 
             if (item.type == ModContent.ItemType<DirtSword>() || item.type == ModContent.ItemType<DirtPickaxe>() && spectraPlayer.DirtSetBonus)
                 mult = 2;
-            base.ModifyWeaponDamage(item, player, ref add, ref mult, ref flat);
+            //base.ModifyWeaponDamage(item, player, ref add, ref mult, ref flat);
         }
 
         public override bool ConsumeAmmo(Item item, Player player)

@@ -50,7 +50,7 @@ namespace SpectraMod.NPCs.Slimes
 
         public override float SpawnChance(NPCSpawnInfo spawnInfo)
         {
-            return (SpawnCondition.OverworldNightMonster.Chance > 0f) ? SpawnCondition.OverworldNightMonster.Chance / 2.75f : 0f;
+            return (SpawnCondition.OverworldNightMonster.Chance > 0f && !Main.hardMode) ? SpawnCondition.OverworldNightMonster.Chance / 2.75f : 0f;
         }
     }
 }

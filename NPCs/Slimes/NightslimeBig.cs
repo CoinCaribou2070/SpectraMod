@@ -30,7 +30,7 @@ namespace SpectraMod.NPCs.Slimes
 
         public override void NPCLoot()
         {
-            SpectraHelper.AttemptSlimeStaff(npc, 650)
+            SpectraHelper.AttemptSlimeStaff(npc, 650);
             int amount = Main.expertMode ? 4 : 2;
             Item.NewItem(npc.getRect(), ModContent.ItemType<Items.Materials.Gel.BlackGel>(), amount);
         }

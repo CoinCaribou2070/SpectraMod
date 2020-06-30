@@ -2,19 +2,13 @@ using Terraria;
 using Terraria.ModLoader;
 using Terraria.ID;
 using Microsoft.Xna.Framework.Graphics;
-using System;
 using Microsoft.Xna.Framework;
-using System.Reflection;
 using Terraria.IO;
-using Terraria.UI;
 using Terraria.Localization;
-using Terraria.Graphics;
-using Terraria.GameContent.UI.Elements;
-using Terraria.ModLoader.IO;
-using Terraria.Utilities;
-using System.IO;
-using System.Linq;
 using ReLogic.Graphics;
+using Terraria.Graphics.Effects;
+using Terraria.Graphics.Shaders;
+using SpectraMod.Skies.DoomSlime;
 
 namespace SpectraMod
 {
@@ -29,6 +23,8 @@ namespace SpectraMod
 		{
 			Instance = this;
 
+			//Filters.Scene["SpectraMod:DoomSlime"] = new Filter(new ScreenShaderData("FilterMiniTower").UseColor(0.5f, 0.5f, 0.5f).UseOpacity(0.5f), EffectPriority.VeryHigh);
+			SkyManager.Instance["SpectraMod:DoomSlime"] = new DoomSky();
 			IL.Terraria.Main.DrawMenu += AddProfessionalMode;
 
 			On.Terraria.GameContent.UI.Elements.UIWorldListItem.DrawSelf += ProfessionalText;

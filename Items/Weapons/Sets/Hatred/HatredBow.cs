@@ -2,6 +2,7 @@
 using Terraria.ID;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
+using SpectraMod.Items.Boss.GraveRobber;
 
 namespace SpectraMod.Items.Weapons.Sets.Hatred
 {
@@ -18,14 +19,17 @@ namespace SpectraMod.Items.Weapons.Sets.Hatred
             item.value = Item.sellPrice(0, 5, 60, 0);
             item.rare = ItemRarityID.Orange;
             item.useStyle = ItemUseStyleID.HoldingOut;
-            item.damage = 38;
+            item.damage = 19;
             item.ranged = true;
-            item.knockBack = 9;
-            item.useTime = 8;
-            item.useAnimation = 8;
+            item.knockBack = 6;
+            item.useTime = 17;
+            item.useAnimation = 17;
             item.autoReuse = true;
             item.UseSound = SoundID.Item5;
-            item.ammo = AmmoID.Arrow;
+            item.useAmmo = AmmoID.Arrow;
+            item.noMelee = true;
+            item.shoot = 10;
+            item.shootSpeed = 9f;
         }
 
         public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
@@ -36,6 +40,16 @@ namespace SpectraMod.Items.Weapons.Sets.Hatred
             }
 
             return true;
+        }
+
+        public override void AddRecipes()
+        {
+            ModRecipe recipe = new ModRecipe(mod);
+            recipe.AddIngredient(ModContent.ItemType<HatredBar>(), 10);
+            recipe.AddIngredient(ItemID.HellstoneBar, 8);
+            recipe.AddTile(TileID.Anvils);
+            recipe.SetResult(this);
+            recipe.AddRecipe();
         }
     }
 }

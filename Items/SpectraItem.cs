@@ -54,7 +54,6 @@ namespace SpectraMod.Items
                 name.overrideColor = customColor;
             }
 
-            Main.NewText(professional);
             TooltipLine expert = tooltips.FirstOrDefault((TooltipLine t) => t.Name == "Expert" && t.mod == "Terraria");
             if (expert != null)
             {

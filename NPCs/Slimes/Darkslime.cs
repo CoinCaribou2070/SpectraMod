@@ -20,8 +20,8 @@ namespace SpectraMod.NPCs.Slimes
             banner = npc.type;
             bannerItem = ModContent.ItemType<DarkslimeBanner>();
 
-            npc.damage = 96;
-            npc.lifeMax = 1200;
+            npc.damage = 108;
+            npc.lifeMax = 2600;
 
             npc.HitSound = SoundID.NPCHit1;
             npc.DeathSound = SoundID.NPCDeath1;

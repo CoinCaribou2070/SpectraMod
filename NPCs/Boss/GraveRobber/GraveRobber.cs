@@ -49,8 +49,10 @@ namespace SpectraMod.NPCs.Boss.GraveRobber
         {
             int zombiesChosenNormal = Main.rand.Next(0, SpectraHelper.Pool_ZombiesNormal.Length);
             int zombiesChosenExpert = Main.rand.Next(0, SpectraHelper.Pool_ZombiesExpert.Length);
+            int zombiesChosenPro = Main.rand.Next(0, SpectraHelper.Pool_ZombiesPro.Length);
             if (Main.rand.NextBool(6) && !Main.expertMode) NPC.NewNPC((int)npc.Center.X, (int)npc.Center.Y, SpectraHelper.Pool_ZombiesNormal[zombiesChosenNormal]);
             if (Main.rand.NextBool(5) && Main.expertMode) NPC.NewNPC((int)npc.Center.X, (int)npc.Center.Y, SpectraHelper.Pool_ZombiesExpert[zombiesChosenExpert]);
+            if (Main.rand.NextBool(3) && SpectraWorld.professionalMode) NPC.NewNPC((int)npc.Center.X, (int)npc.Center.Y, SpectraHelper.Pool_ZombiesPro[zombiesChosenPro]);
         }
 
         public override void HitEffect(int hitDirection, double damage)

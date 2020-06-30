@@ -1,4 +1,5 @@
 ﻿using SpectraMod.Items.Boss.GraveRobber;
+using SpectraMod.Items.ProModeItems.HardMode;
 using SpectraMod.NPCs.Boss.GraveRobber;
 using System;
 using System.Collections.Generic;
@@ -21,24 +22,33 @@ namespace SpectraMod.NPCs
         {
             if (SpectraWorld.professionalMode)
             {
-                if (npc.boss)
+                if (!npcLooted)
                 {
-                    if (!npcLooted)
+                    if (npc.boss)
                     {
-                        if (SpectraWorld.professionalMode)
-                        {
-                            switch (npc.type)
+                            if (SpectraWorld.professionalMode)
                             {
-                                case NPCID.KingSlime:
-                                    break;
-                            }
+                                switch (npc.type)
+                                {
+                                    case NPCID.KingSlime:
+                                        break;
+                                }
 
-                            if (npc.type == ModContent.NPCType<GraveRobber>())
-                                npc.DropItemInstanced(npc.position, npc.Size, ModContent.ItemType<UnluckyTomb>());
-                        }
-                        npcLooted = true;
-                        npc.NPCLoot();
+                                if (npc.type == ModContent.NPCType<GraveRobber>())
+                                    npc.DropItemInstanced(npc.position, npc.Size, ModContent.ItemType<UnluckyTomb>());
+                            }
                     }
+
+                    switch (npc.type)
+                    {
+                        case NPCID.Pumpking:
+                            if (NPC.waveNumber == 15 && Main.rand.NextBool(10))
+                                npc.DropItemInstanced(npc.position, npc.Size, ModContent.ItemType<HarvestCrystal>());
+                            break;
+                    }
+
+                    npcLooted = true;
+                    npc.NPCLoot();
                 }
             }
 

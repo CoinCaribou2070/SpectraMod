@@ -25,5 +25,10 @@ namespace SpectraMod.Projectiles.Ammo
         {
             target.AddBuff(ModContent.BuffType<Buffs.Debuffs.Hated>(), 180);
         }
+
+        public override void Kill(int timeLeft)
+        {
+            Main.PlaySound(SoundID.Dig, projectile.Center);
+        }
     }
 }
