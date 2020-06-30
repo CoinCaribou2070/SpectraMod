@@ -188,6 +188,14 @@ namespace SpectraMod
                 }
             }
             #endregion
+
+            if (SpectraWorld.professionalMode)
+            {
+                if (player.wet && !player.lavaWet && !player.honeyWet)
+                {
+                    player.AddBuff(BuffID.Wet, 30 * 60);
+                }
+            }
         }
 
         public override void PostUpdateBuffs()
