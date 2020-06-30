@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using System;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -24,7 +25,6 @@ namespace SpectraMod.Projectiles.Weapons.Prism.Death
 
                 case "pbone":
                     //TD: Decide colour (mixture?)
-                    //return Main.rgbToHsl(new AnimatedColor(Color.SeaGreen, Color.Green).GetColor()).X;
                     return Main.rgbToHsl(Main.DiscoColor).X;
 
                 case "Stevie":
@@ -36,10 +36,9 @@ namespace SpectraMod.Projectiles.Weapons.Prism.Death
                     ).X;
 
                 case "Martin":
-                    return Main.rgbToHsl(new AnimatedColor(new Color(46, 43, 226), new Color(255, 0, 0)).GetColor()).X;
+                    return Main.rgbToHsl((Main.GameUpdateCount % 100) > 50 ? new Color(184, 56, 59) : new Color(88, 133, 162)).X;
 
                 case "CoolDoge":
-                    Main.NewText("D");
                     return Main.rgbToHsl(Color.Black).X;
 
                 default:
