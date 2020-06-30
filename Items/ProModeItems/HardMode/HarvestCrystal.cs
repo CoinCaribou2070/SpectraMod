@@ -15,6 +15,7 @@ namespace SpectraMod.Items.ProModeItems.HardMode
 
         public override void SafeSetDefaults()
         {
+            item.expert = true;
             professional = true;
 
             item.CloneDefaults(ItemID.LastPrism);

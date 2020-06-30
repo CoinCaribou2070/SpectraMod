@@ -97,7 +97,7 @@ namespace SpectraMod.Projectiles.Weapons.Prism
 
 		// This property encloses the internal AI variable projectile.localAI[1].
 		// Normally, localAI is not synced over the network. This beam manually syncs this variable using SendExtraAI and ReceiveExtraAI.
-		private float BeamLength
+		public float BeamLength
 		{
 			get => projectile.localAI[1];
 			set => projectile.localAI[1] = value;

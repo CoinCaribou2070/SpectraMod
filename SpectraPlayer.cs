@@ -176,7 +176,6 @@ namespace SpectraMod
 
         public override void UpdateBadLifeRegen()
         {
-            Main.NewText(Hated);
             if (Hated)
             {
                 player.lifeRegen = 0;

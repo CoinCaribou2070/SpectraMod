@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Terraria.ModLoader;
 using Terraria;
+using System.Security.Authentication.ExtendedProtection;
 
 namespace SpectraMod.Items
 {
@@ -14,9 +15,9 @@ namespace SpectraMod.Items
         /// <summary>
         /// Use for animated items
         /// </summary>
-        public bool ignoreAutoSize;
+        public bool ignoreAutoSize = false;
 
-        public bool professional;
+        public bool professional = false;
 
         public virtual void SafeSetDefaults()
         {
@@ -28,9 +29,8 @@ namespace SpectraMod.Items
             Texture2D texture = Main.itemTexture[item.type];
 
             CustomRare = CustomRarity.None;
-            if (SpectraMod.SizeFix && !ignoreAutoSize) item.Size = new Vector2(texture.Width, texture.Height);
+            if (SpectraMod.SizeFix && !ignoreAutoSize) item.Size = texture.Size();
             SafeSetDefaults();
-            
         }
 
         public void SafeModifyTooltips(List<TooltipLine> tooltips)
@@ -52,6 +52,13 @@ namespace SpectraMod.Items
                         break;
                 }
                 name.overrideColor = customColor;
+            }
+
+            Main.NewText(professional);
+            TooltipLine expert = tooltips.FirstOrDefault((TooltipLine t) => t.Name == "Expert" && t.mod == "Terraria");
+            if (expert != null)
+            {
+                expert.text = "Professional";
             }
         }
     }
