@@ -6,6 +6,8 @@ namespace SpectraMod.Items.Armor.Sets.Survivor
     //[AutoloadEquip(EquipType.Body]
     public class SurvivorBreastplate : SpectraItem
     {
+        public override string Texture => "Terraria/Item_39";
+
         public override void SetStaticDefaults()
         {
             Tooltip.SetDefault("'I will survive!'" +
