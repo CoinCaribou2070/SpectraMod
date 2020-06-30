@@ -1,5 +1,7 @@
-﻿using Terraria;
+﻿using System.Collections.Generic;
+using Terraria;
 using Terraria.ID;
+using Terraria.ModLoader;
 
 namespace SpectraMod.Items.Boss.GraveRobber
 {
@@ -8,12 +10,14 @@ namespace SpectraMod.Items.Boss.GraveRobber
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Unlucky Gravestone");
-            Tooltip.SetDefault("'The robber's downfall...'" +
-                               "\nZombies and demon eyes become friendly");
+            Tooltip.SetDefault("'An unlucky downfall...'" +
+                               "\nZombies and demon eyes become passive");
         }
 
         public override void SafeSetDefaults()
         {
+            professional = true;
+
             item.value = Item.sellPrice(0, 6, 6, 6);
             item.accessory = true;
             item.rare = ItemRarityID.White;
