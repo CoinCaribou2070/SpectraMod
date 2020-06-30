@@ -21,11 +21,12 @@ namespace SpectraMod.Projectiles.Weapons.Prism.Death
 
                 case "Diagnostic":
                 case "DiagnosticLord":
+                case "Diagnostic Lord":
                     return Main.rgbToHsl(new AnimatedColor(Color.Green, Color.GreenYellow).GetColor()).X;
 
                 case "pbone":
                     //TD: Decide colour (mixture?)
-                    return Main.rgbToHsl(Main.DiscoColor).X;
+                    return (Math.Max(0.05f * 100, Main.rgbToHsl(new AnimatedColor(Color.SeaGreen, Color.Turquoise).GetColor()).X * 100)) / 100;
 
                 case "Stevie":
                     if (Main.rgbToHsl(new AnimatedColor(Color.Red, Color.Orange).GetColor()).X < 0.005f)
