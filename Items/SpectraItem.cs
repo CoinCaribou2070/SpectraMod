@@ -54,7 +54,7 @@ namespace SpectraMod.Items
                         customColor = null;
                         break;
                     case CustomRarity.Professional:
-                        customColor = new AnimatedColor(Color.Black, Color.White).GetColor();
+                        customColor = new AnimatedColor(Color.Red, Color.Yellow).GetColor();
                         break;
                 }
                 name.overrideColor = customColor;
