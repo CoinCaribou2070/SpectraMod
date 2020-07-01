@@ -17,6 +17,7 @@ namespace SpectraMod.Projectiles.Boss.MageMaster
             projectile.penetrate = Main.expertMode ? 8 : 6;
             projectile.hostile = true;
             projectile.friendly = false;
+            projectile.alpha = 100;
         }
 
         public override bool OnTileCollide(Vector2 oldVelocity)

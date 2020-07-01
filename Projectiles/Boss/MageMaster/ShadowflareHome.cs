@@ -17,6 +17,7 @@ namespace SpectraMod.Projectiles.Boss.MageMaster
             projectile.hostile = true;
             projectile.friendly = false;
             projectile.timeLeft = 150;
+            projectile.alpha = 100;
         }
 
         private float Target { get => projectile.ai[0]; set => projectile.ai[0] = value; }

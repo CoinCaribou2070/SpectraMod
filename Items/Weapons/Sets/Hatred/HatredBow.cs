@@ -11,7 +11,7 @@ namespace SpectraMod.Items.Weapons.Sets.Hatred
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Berserker Bow");
-            Tooltip.SetDefault("Strike with the bow of vengence!");
+            Tooltip.SetDefault("Strike with the bow of vengeance!");
         }
 
         public override void SafeSetDefaults()

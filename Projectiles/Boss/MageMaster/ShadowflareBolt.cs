@@ -15,6 +15,7 @@ namespace SpectraMod.Projectiles.Boss.MageMaster
             projectile.penetrate = Main.expertMode ? 4 : 3;
             projectile.hostile = true;
             projectile.friendly = false;
+            projectile.alpha = 100;
         }
 
         public override void AI()

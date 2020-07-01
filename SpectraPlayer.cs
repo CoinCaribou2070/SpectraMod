@@ -1,7 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using SpectraMod.Items.Consumables;
-using SpectraMod.NPCs.Slimes;
+using SpectraMod.Items.Armor.Sets.Survivor;
 using Terraria;
 using Terraria.Graphics.Effects;
 using Terraria.ID;
@@ -28,6 +26,7 @@ namespace SpectraMod
         #region ARMOR_BOOLS
         public bool DirtSetBonus;
         public bool AngerSetBonus;
+        public bool SurvivorSetBonus;
         #endregion
 
         public SpectraEnums.HealthLevel PlayerLifeTier = SpectraEnums.HealthLevel.None;
@@ -46,6 +45,7 @@ namespace SpectraMod
             Hated = false;
             DirtSetBonus = false;
             AngerSetBonus = false;
+            SurvivorSetBonus = false;
             CharmoftheDeadEffect = false;
             CritDamage = 1f;
 
@@ -280,6 +280,25 @@ namespace SpectraMod
         {
             PlayerLifeTier = (SpectraEnums.HealthLevel)tag.GetInt("LifeTier");
             PlayerManaTier = (SpectraEnums.ManaLevel)tag.GetInt("ManaTier");
+        }
+
+        public override void OnHitNPC(Item item, NPC target, int damage, float knockback, bool crit)
+        {
+            survivorSetBonus(target.Center.X, target.Center.Y, target.type);
+        }
+
+        public override void OnHitNPCWithProj(Projectile proj, NPC target, int damage, float knockback, bool crit)
+        {
+            survivorSetBonus(target.Center.X, target.Center.Y, target.type);
+        }
+
+        private void survivorSetBonus(float x, float y, int type)
+        {
+            if (SurvivorSetBonus)
+            {
+                if (type == NPCID.TargetDummy) return;
+                if (Main.rand.NextBool(4)) Item.NewItem(new Rectangle((int)x, (int)y, 1, 1), ModContent.ItemType<SurvivorPickup>());
+            }
         }
     }
 }

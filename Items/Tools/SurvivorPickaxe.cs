@@ -10,13 +10,13 @@ namespace SpectraMod.Items.Tools
         {
             DisplayName.SetDefault("Survivor's Pickaxe");
             Tooltip.SetDefault("The pickaxe of doom" +
-                               "\nMakes you immune to lava while heald");
+                             "\nMakes you immune to lava while held");
         }
 
         public override void SafeSetDefaults()
         {
-            item.value = Item.sellPrice(0, 2, 89, 99);
-            item.rare = ItemRarityID.Blue;
+            item.value = Item.sellPrice(0, 3, 0, 0);
+            item.rare = ItemRarityID.Orange;
             item.useStyle = ItemUseStyleID.SwingThrow;
             item.damage = 16;
             item.melee = true;

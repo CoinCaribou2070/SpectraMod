@@ -22,11 +22,11 @@ namespace SpectraMod.Items.Materials.Bars
         public override void AddRecipes()
         {
             ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ItemID.HellstoneBar, 15);
-            recipe.AddIngredient(ModContent.ItemType<DelightedBar>(), 15);
-            recipe.AddIngredient(ModContent.ItemType<Boss.GraveRobber.HatredBar>(), 15);
+            recipe.AddIngredient(ItemID.HellstoneBar, 2);
+            recipe.AddIngredient(ModContent.ItemType<DelightedBar>(), 2);
+            recipe.AddIngredient(ModContent.ItemType<Boss.GraveRobber.HatredBar>(), 2);
             recipe.AddTile(TileID.Anvils);
-            recipe.SetResult(this, 5);
+            recipe.SetResult(this, 1);
             recipe.AddRecipe();
         }
     }

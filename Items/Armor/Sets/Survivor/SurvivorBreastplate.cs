@@ -1,12 +1,13 @@
 ﻿using Terraria;
+using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace SpectraMod.Items.Armor.Sets.Survivor
 {
-    //[AutoloadEquip(EquipType.Body]
+    [AutoloadEquip(EquipType.Body)]
     public class SurvivorBreastplate : SpectraItem
     {
-        public override string Texture => "Terraria/Item_39";
+        public override string Texture => "SpectraMod/Items/Armor/PlaceholderBreastplate";
 
         public override void SetStaticDefaults()
         {
@@ -17,6 +18,8 @@ namespace SpectraMod.Items.Armor.Sets.Survivor
 
         public override void SafeSetDefaults()
         {
+            item.rare = ItemRarityID.Orange;
+            item.value = Item.sellPrice(0, 5, 0, 0);
             item.defense = 9;
         }
 
