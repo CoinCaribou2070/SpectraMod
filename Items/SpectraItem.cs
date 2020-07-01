@@ -25,15 +25,12 @@ namespace SpectraMod.Items
 
         public sealed override void SetDefaults()
         {
+            SafeSetDefaults();
+
             //Texture2D texture = ModContent.GetTexture(item.modItem.Texture);
             Texture2D texture = Main.itemTexture[item.type];
 
             if (SpectraMod.SizeFix && !ignoreAutoSize) item.Size = texture.Size();
-
-            if (professional())
-                item.expert = true;
-
-            SafeSetDefaults();
         }
 
         public virtual void SafeModifyTooltips(List<TooltipLine> tooltips)

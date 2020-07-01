@@ -9,6 +9,7 @@ using ReLogic.Graphics;
 using Terraria.Graphics.Effects;
 using Terraria.Graphics.Shaders;
 using SpectraMod.Skies.DoomSlime;
+using Terraria.GameContent.UI;
 
 namespace SpectraMod
 {
@@ -30,11 +31,20 @@ namespace SpectraMod
 			On.Terraria.GameContent.UI.Elements.UIWorldListItem.DrawSelf += ProfessionalText;
 			On.Terraria.Main.DrawInterface_35_YouDied += YouDiedL;
 			On.Terraria.Player.DropCoins += DropAllYourCoins;
+            On.Terraria.GameContent.UI.ItemRarity.Initialize += ItemRarity_Initialize;
+            On.Terraria.GameContent.UI.ItemRarity.GetColor += ItemRarity_GetColor;
+            On.Terraria.Main.MouseText += Main_MouseText;
+            On.Terraria.ItemText.NewText += ItemText_NewText;
+            On.Terraria.ItemText.Update += ItemText_Update;
+
+			ItemRarity.Initialize();
 		}
 
         public override void Unload()
         {
 			Instance = null;
+
+			ItemRarity.Initialize();
 
             base.Unload();
         }
