@@ -11,6 +11,8 @@ namespace SpectraMod.Items.Weapons.RevengeMode
 
         public override bool professional() => true;
 
+        public override CustomRarity CustomRare => CustomRarity.Professional;
+
         public override void SetStaticDefaults()
         {
             Tooltip.SetDefault("Fire a beam of absolute dispair and destruction");

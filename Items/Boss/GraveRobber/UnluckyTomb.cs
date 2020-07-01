@@ -9,6 +9,8 @@ namespace SpectraMod.Items.Boss.GraveRobber
     {
         public override bool professional() => true;
 
+        public override CustomRarity CustomRare => CustomRarity.Professional;
+
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Unlucky Gravestone");

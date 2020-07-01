@@ -11,6 +11,8 @@ namespace SpectraMod.Items.ProModeItems.HardMode
     {
         public override bool professional() => true;
 
+        public override CustomRarity CustomRare => CustomRarity.Professional;
+
         public override void SetStaticDefaults()
         {
             Tooltip.SetDefault("Fire a beam of spooky energy");

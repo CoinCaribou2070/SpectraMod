@@ -10,7 +10,7 @@ namespace SpectraMod.Items
 {
     public abstract class SpectraItem : ModItem
     {
-        CustomRarity CustomRare;
+        public virtual CustomRarity CustomRare => CustomRarity.None;
 
         /// <summary>
         /// Use for animated items
@@ -28,7 +28,6 @@ namespace SpectraMod.Items
             //Texture2D texture = ModContent.GetTexture(item.modItem.Texture);
             Texture2D texture = Main.itemTexture[item.type];
 
-            CustomRare = CustomRarity.None;
             if (SpectraMod.SizeFix && !ignoreAutoSize) item.Size = texture.Size();
 
             if (professional())
@@ -54,6 +53,9 @@ namespace SpectraMod.Items
                     case CustomRarity.None:
                         customColor = null;
                         break;
+                    case CustomRarity.Professional:
+                        customColor = new AnimatedColor(Color.Black, Color.White).GetColor();
+                        break;
                 }
                 name.overrideColor = customColor;
             }
@@ -68,6 +70,7 @@ namespace SpectraMod.Items
 
     public enum CustomRarity : byte
     {
-        None
+        None,
+        Professional
     }
 }
