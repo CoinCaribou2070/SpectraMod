@@ -31,6 +31,9 @@ namespace SpectraMod.Items
             Texture2D texture = Main.itemTexture[item.type];
 
             if (SpectraMod.SizeFix && !ignoreAutoSize) item.Size = texture.Size();
+
+            if (professional())
+                item.rare = -13;
         }
 
         public virtual void SafeModifyTooltips(List<TooltipLine> tooltips)
