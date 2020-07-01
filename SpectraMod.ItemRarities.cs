@@ -115,6 +115,7 @@ namespace SpectraMod
 			if (newItem.rare != -13)
             {
 				orig(newItem, stack, noStack, longText);
+				return;
 			}
 
 			int num4 = -1;
@@ -192,12 +193,12 @@ namespace SpectraMod
 
 		private void ItemText_Update(On.Terraria.ItemText.orig_Update orig, ItemText self, int whoAmI)
 		{
-			orig(self, whoAmI);
-
-			Item item = new Item();
-
-			if (item.rare == -13 || professionalForItemTextDontUseThisOtherwise)
+			if (professionalForItemTextDontUseThisOtherwise && professionalForItemTextDontUseThisOtherwise)
+            {
 				self.color = new AnimatedColor(Color.Red, Color.Yellow).GetColor();
+			}
+
+			orig(self, whoAmI);
 		}
 		#endregion
 	}
