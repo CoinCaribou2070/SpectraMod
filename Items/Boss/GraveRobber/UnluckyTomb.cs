@@ -7,6 +7,8 @@ namespace SpectraMod.Items.Boss.GraveRobber
 {
     public class UnluckyTomb : SpectraItem
     {
+        public override bool professional() => true;
+
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Unlucky Gravestone");
@@ -16,12 +18,11 @@ namespace SpectraMod.Items.Boss.GraveRobber
 
         public override void SafeSetDefaults()
         {
-            professional = true;
+            item.expert = true;
 
             item.value = Item.sellPrice(0, 6, 6, 6);
             item.accessory = true;
             item.rare = ItemRarityID.White;
-            item.expert = true;
         }
 
         public override void UpdateAccessory(Player player, bool hideVisual)

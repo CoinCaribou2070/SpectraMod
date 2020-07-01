@@ -14,10 +14,11 @@ namespace SpectraMod.Items.Boss.GraveRobber
 
         public override void SafeSetDefaults()
         {
+            item.expert = true;
+
             item.value = Item.sellPrice(0, 1, 0, 0);
             item.accessory = true;
             item.rare = ItemRarityID.White;
-            item.expert = true;
         }
 
         public override void UpdateAccessory(Player player, bool hideVisual)

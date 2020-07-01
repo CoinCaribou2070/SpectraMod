@@ -9,6 +9,8 @@ namespace SpectraMod.Items.ProModeItems.HardMode
 {
     public class HarvestCrystal : SpectraItem
     {
+        public override bool professional() => true;
+
         public override void SetStaticDefaults()
         {
             Tooltip.SetDefault("Fire a beam of spooky energy");
@@ -18,7 +20,6 @@ namespace SpectraMod.Items.ProModeItems.HardMode
         public override void SafeSetDefaults()
         {
             item.expert = true;
-            professional = true;
 
             item.value = Item.sellPrice(0, 25, 0, 0);
             item.CloneDefaults(ItemID.LastPrism);

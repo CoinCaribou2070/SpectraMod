@@ -17,7 +17,7 @@ namespace SpectraMod.Items
         /// </summary>
         public bool ignoreAutoSize = false;
 
-        public bool professional = false;
+        public virtual bool professional() => false;
 
         public virtual void SafeSetDefaults()
         {
@@ -30,6 +30,10 @@ namespace SpectraMod.Items
 
             CustomRare = CustomRarity.None;
             if (SpectraMod.SizeFix && !ignoreAutoSize) item.Size = texture.Size();
+
+            if (professional())
+                item.expert = true;
+
             SafeSetDefaults();
         }
 
@@ -55,7 +59,7 @@ namespace SpectraMod.Items
             }
 
             TooltipLine expert = tooltips.FirstOrDefault((TooltipLine t) => t.Name == "Expert" && t.mod == "Terraria");
-            if (expert != null)
+            if (expert != null && professional())
             {
                 expert.text = "Professional";
             }

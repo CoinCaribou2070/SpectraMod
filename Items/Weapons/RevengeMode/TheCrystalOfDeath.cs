@@ -9,6 +9,8 @@ namespace SpectraMod.Items.Weapons.RevengeMode
     {
         public override string Texture => "Terraria/Item_" + ItemID.LastPrism;
 
+        public override bool professional() => true;
+
         public override void SetStaticDefaults()
         {
             Tooltip.SetDefault("Fire a beam of absolute dispair and destruction");
@@ -17,7 +19,7 @@ namespace SpectraMod.Items.Weapons.RevengeMode
 
         public override void SafeSetDefaults()
         {
-            professional = true;
+            item.expert = true;
 
             item.CloneDefaults(ItemID.LastPrism);
             item.magic = true;
