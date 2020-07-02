@@ -25,15 +25,18 @@ namespace SpectraMod.Items
 
         public sealed override void SetDefaults()
         {
+            SafeSetDefaults();
+
             //Texture2D texture = ModContent.GetTexture(item.modItem.Texture);
             Texture2D texture = Main.itemTexture[item.type];
 
             if (SpectraMod.SizeFix && !ignoreAutoSize()) item.Size = texture.Size();
 
             if (professional())
-                item.expert = true;
-
-            SafeSetDefaults();
+            {
+                item.rare = -13;
+                item.expert = false; //expert messes with my rarity code
+            }
         }
 
         public virtual void SafeModifyTooltips(List<TooltipLine> tooltips)
@@ -60,11 +63,8 @@ namespace SpectraMod.Items
                 name.overrideColor = customColor;
             }
 
-            TooltipLine expert = tooltips.FirstOrDefault((TooltipLine t) => t.Name == "Expert" && t.mod == "Terraria");
-            if (expert != null && professional())
-            {
-                expert.text = "Professional";
-            }
+            if (professional())
+                tooltips.Add(new TooltipLine(mod, "Spectra:Professional", "Professional"));
         }
     }
 
