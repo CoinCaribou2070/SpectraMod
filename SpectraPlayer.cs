@@ -21,6 +21,7 @@ namespace SpectraMod
         public bool AllPassive;
         public bool Hated;
         public float CritDamage;
+        public float NoAmmoChance;
         #endregion
 
         #region ARMOR_BOOLS
@@ -48,6 +49,7 @@ namespace SpectraMod
             SurvivorSetBonus = false;
             CharmoftheDeadEffect = false;
             CritDamage = 1f;
+            NoAmmoChance = 0f;
 
             AllPassive = false;
         }

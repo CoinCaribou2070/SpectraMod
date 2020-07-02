@@ -11,8 +11,9 @@ namespace SpectraMod.Items.Armor.Sets.Survivor
 
         public override void SetStaticDefaults()
         {
+            DisplayName.SetDefault("Survivor's Leggings");
             Tooltip.SetDefault("'I will survive!'" +
-                             "\n4% increased crit chance" +
+                             "\n4% increased critical strike chance" +
                              "\n20% increased movement speed");
         }
 

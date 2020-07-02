@@ -4,19 +4,18 @@ using Terraria.ModLoader;
 
 namespace SpectraMod.Items.Armor.Sets.Survivor
 {
-    [AutoloadEquip(EquipType.Head)]
-    public class SurvivorHelm : SpectraItem
+    public class SurvivorHeadgear : SpectraItem
     {
         public override string Texture => "SpectraMod/Items/Armor/PlaceholderHelmet";
 
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Survivor's Helm");
+            DisplayName.SetDefault("Survivor's Headgear");
             Tooltip.SetDefault("'I will survive!'" +
-                             "\n6% increased melee damage" +
-                             "\n3% increased melee critical strike chance" +
-                             "\n12% increased melee speed" +
-                             "\nMelee attacks inflict On Fire!");
+                             "\n7% increased ranged damage" +
+                             "\n5% increased ranged critical strike chance" +
+                             "\n2% increased critical strike damage" +
+                             "\n8% chance to not consume ammo");
         }
 
         public override void SafeSetDefaults()
@@ -28,17 +27,19 @@ namespace SpectraMod.Items.Armor.Sets.Survivor
 
         public override void UpdateEquip(Player player)
         {
-            player.meleeDamage += 0.06f;
-            player.meleeCrit += 3;
-            player.meleeSpeed += 0.12f;
-            player.magmaStone = true;
+            SpectraPlayer spectraPlayer = player.GetModPlayer<SpectraPlayer>();
+
+            player.rangedDamage += 0.07f;
+            player.rangedCrit += 5;
+            spectraPlayer.CritDamage += 0.02f;
+            spectraPlayer.NoAmmoChance += 0.08f;
         }
 
         public override bool IsArmorSet(Item head, Item body, Item legs) => body.type == ModContent.ItemType<SurvivorBreastplate>() && legs.type == ModContent.ItemType<SurvivorLeggings>();
 
         public override void UpdateArmorSet(Player player)
         {
-            player.setBonus = "10% increased melee damage" +
+            player.setBonus = "10% increased ranged damage" +
                             "\nHitting enemies has a chance to drop blood pellets that restore health" +
                             "\nWhen under half health, blood pellets are attracted to you";
 

@@ -11,8 +11,9 @@ namespace SpectraMod.Items.Armor.Sets.Survivor
 
         public override void SetStaticDefaults()
         {
+            DisplayName.SetDefault("Survivor's Breastplate");
             Tooltip.SetDefault("'I will survive!'" +
-                             "\nCrit damage increased by 10%" +
+                             "\nCritical strike damage increased by 10%" +
                              "\nYou take 5% less damage");
         }
 

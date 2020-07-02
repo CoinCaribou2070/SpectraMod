@@ -36,6 +36,9 @@ namespace SpectraMod.Items
 
             if (spectraPlayer.AngerSetBonus && Main.rand.NextBool(10))
                 return false;
+
+            if (Main.rand.NextFloat() > spectraPlayer.NoAmmoChance)
+                return false;
             return base.ConsumeAmmo(item, player);
         }
 
