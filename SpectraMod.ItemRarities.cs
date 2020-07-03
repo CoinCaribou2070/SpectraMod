@@ -1,9 +1,11 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using MonoMod.Cil;
 using SpectraMod.Items;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using Terraria;
@@ -22,6 +24,18 @@ namespace SpectraMod
     public partial class SpectraMod : Mod
     {
 		public bool professionalForItemTextDontUseThisOtherwise;
+
+		private void LoadItemRare()
+        {
+			On.Terraria.GameContent.UI.ItemRarity.Initialize += ItemRarity_Initialize;
+			On.Terraria.GameContent.UI.ItemRarity.GetColor += ItemRarity_GetColor;
+			On.Terraria.Main.MouseText += Main_MouseText;
+			On.Terraria.ItemText.NewText += ItemText_NewText;
+			On.Terraria.ItemText.Update += ItemText_Update;
+
+			ItemRarity.Initialize();
+		}
+
 		#region ITEMRARITY
 		private static Dictionary<int, Color> _rarities = new Dictionary<int, Color>();
         private void ItemRarity_Initialize(On.Terraria.GameContent.UI.ItemRarity.orig_Initialize orig)
@@ -46,6 +60,8 @@ namespace SpectraMod
 		{
 			if (rarity == -13)
 				return new AnimatedColor(Color.Red, Color.Yellow).GetColor(); //look I just wanna be extra sure
+
+			orig(rarity);
 
 			Color result = new Color(Main.mouseTextColor, Main.mouseTextColor, Main.mouseTextColor, Main.mouseTextColor);
 			if (_rarities.ContainsKey(rarity))

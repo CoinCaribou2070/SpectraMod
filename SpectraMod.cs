@@ -24,20 +24,12 @@ namespace SpectraMod
 		{
 			Instance = this;
 
-			//Filters.Scene["SpectraMod:DoomSlime"] = new Filter(new ScreenShaderData("FilterMiniTower").UseColor(0.5f, 0.5f, 0.5f).UseOpacity(0.5f), EffectPriority.VeryHigh);
 			SkyManager.Instance["SpectraMod:DoomSlime"] = new DoomSky();
 			IL.Terraria.Main.DrawMenu += AddProfessionalMode;
 
 			On.Terraria.GameContent.UI.Elements.UIWorldListItem.DrawSelf += ProfessionalText;
 			On.Terraria.Main.DrawInterface_35_YouDied += YouDiedL;
 			On.Terraria.Player.DropCoins += DropAllYourCoins;
-            On.Terraria.GameContent.UI.ItemRarity.Initialize += ItemRarity_Initialize;
-            On.Terraria.GameContent.UI.ItemRarity.GetColor += ItemRarity_GetColor;
-            On.Terraria.Main.MouseText += Main_MouseText;
-            On.Terraria.ItemText.NewText += ItemText_NewText;
-            On.Terraria.ItemText.Update += ItemText_Update;
-
-			ItemRarity.Initialize();
 		}
 
         public override void Unload()
