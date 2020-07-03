@@ -1,11 +1,9 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using MonoMod.Cil;
 using SpectraMod.Items;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using Terraria;
@@ -60,8 +58,6 @@ namespace SpectraMod
 		{
 			if (rarity == -13)
 				return new AnimatedColor(Color.Red, Color.Yellow).GetColor(); //look I just wanna be extra sure
-
-			orig(rarity);
 
 			Color result = new Color(Main.mouseTextColor, Main.mouseTextColor, Main.mouseTextColor, Main.mouseTextColor);
 			if (_rarities.ContainsKey(rarity))
