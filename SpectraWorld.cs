@@ -3,6 +3,8 @@ using System.IO;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
 using System.Collections.Generic;
+using Terraria.GameContent.UI.Elements;
+using System.Linq;
 
 namespace SpectraMod
 {

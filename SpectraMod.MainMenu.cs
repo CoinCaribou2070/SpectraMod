@@ -14,11 +14,14 @@ using System.IO;
 using System.Linq;
 using MonoMod.Cil;
 using Mono.Cecil.Cil;
+using System.Collections.Generic;
 
 namespace SpectraMod
 {
     public partial class SpectraMod : Mod
     {
+        public Dictionary<UIWorldListItem, TagCompound> dataCache = new Dictionary<UIWorldListItem, TagCompound>();
+
         #region WORLDCREATION
         private void AddProfessionalMode(ILContext il)
         {
@@ -168,8 +171,15 @@ namespace SpectraMod
 
             try
             {
-                byte[] bytes = FileUtilities.ReadAllBytes(filePath, fileData.IsCloudSave);
-                tagCompound1 = TagIO.FromStream(new MemoryStream(bytes), true);
+                UIWorldListItem key = dataCache.Keys.FirstOrDefault((UIWorldListItem ui) => ui.Equals(self));
+                if (key != null)
+                    tagCompound1 = dataCache[key];
+                else
+                {
+                    byte[] bytes = FileUtilities.ReadAllBytes(filePath, fileData.IsCloudSave);
+                    tagCompound1 = TagIO.FromStream(new MemoryStream(bytes), true);
+                    dataCache.Add(self, tagCompound1);
+                }
             }
             catch
             {

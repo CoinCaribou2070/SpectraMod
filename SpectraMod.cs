@@ -30,9 +30,11 @@ namespace SpectraMod
 			On.Terraria.GameContent.UI.Elements.UIWorldListItem.DrawSelf += ProfessionalText;
 			On.Terraria.Main.DrawInterface_35_YouDied += YouDiedL;
 			On.Terraria.Player.DropCoins += DropAllYourCoins;
+
+			dataCache.Clear();
 		}
 
-        public override void Unload()
+		public override void Unload()
         {
 			Instance = null;
 

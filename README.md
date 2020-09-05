@@ -6,6 +6,7 @@ A port of the Terraria fan mod [Spectra Mod](https://terraria-spectra-mod.fandom
  * OreoV2: Maintainer and protector of Spectra Mod.
  * KandyKitty: Maintainer and protector of Spectra Mod.
  * pbone: Porter and founder of the tModLoader port.
+ * Stevie: Developer of the port.
  * MartinPlayZ: Spriter and member of the original Spectra Mod.
  
  # Using my code
