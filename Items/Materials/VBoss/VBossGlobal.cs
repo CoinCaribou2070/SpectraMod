@@ -26,7 +26,7 @@ namespace SpectraMod.Items.Materials.VBoss
                         Item.NewItem(npc.getRect(), ModContent.ItemType<TwinScanner>(), Main.rand.Next(5) + 15);
                         break;
                     case NPCID.Golem:
-                        //Item.NewItem(npc.getRect(), ModContent.ItemType<GolemEssence>(), Main.rand.Next(6) + 3);
+                        Item.NewItem(npc.getRect(), ModContent.ItemType<GolemEssence>(), Main.rand.Next(6) + 3);
                         break;
                     default:
                         break;
@@ -43,20 +43,17 @@ namespace SpectraMod.Items.Materials.VBoss
             {
                 switch (arg)
                 {
-                    case NPCID.TheDestroyer:
+                    case ItemID.DestroyerBossBag:
                         Item.NewItem(player.getRect(), ModContent.ItemType<DestroyerMandible>(), Main.rand.Next(11) + 20);
                         break;
-                    case NPCID.SkeletronPrime:
+                    case ItemID.SkeletronPrimeBossBag:
                         Item.NewItem(player.getRect(), ModContent.ItemType<SkeletronRib>(), Main.rand.Next(16) + 30);
                         break;
-                    case NPCID.Spazmatism:
+                    case ItemID.TwinsBossBag:
                         Item.NewItem(player.getRect(), ModContent.ItemType<TwinScanner>(), Main.rand.Next(5) + 15);
                         break;
-                    case NPCID.Retinazer:
-                        Item.NewItem(player.getRect(), ModContent.ItemType<TwinScanner>(), Main.rand.Next(5) + 15);
-                        break;
-                    case NPCID.Golem:
-                        //Item.NewItem(npc.getRect(), ModContent.ItemType<GolemEssence>(), Main.rand.Next(6) + 3);
+                    case ItemID.GolemBossBag:
+                        Item.NewItem(player.getRect(), ModContent.ItemType<GolemEssence>(), Main.rand.Next(6) + 3);
                         break;
                     default:
                         break;
