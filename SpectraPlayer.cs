@@ -15,6 +15,7 @@ namespace SpectraMod
         public bool UnluckyTombEffect;
         public bool GreaterPygmyNecklaceEffect;
         public bool CharmoftheDeadEffect;
+        public bool AutoswingMinions;
         #endregion
 
         #region MISC_EFFECTS
@@ -48,6 +49,7 @@ namespace SpectraMod
             AngerSetBonus = false;
             SurvivorSetBonus = false;
             CharmoftheDeadEffect = false;
+            AutoswingMinions = false;
             CritDamage = 1f;
             NoAmmoChance = 0f;
 

@@ -12,8 +12,11 @@ namespace SpectraMod.Items
     public class SpectraGlobalItem : GlobalItem
     {
         public override bool InstancePerEntity => true;
+        public override bool CloneNewInstances => true;
 
         public static bool DirtPick;
+
+        public bool givenAutoswing;
 
         public override void HoldItem(Item item, Player player)
         {
@@ -47,6 +50,24 @@ namespace SpectraMod.Items
             SpectraPlayer spectraPlayer = player.GetModPlayer<SpectraPlayer>();
 
             if (crit) damage = (int)(damage * spectraPlayer.CritDamage);
+        }
+
+        public override bool UseItem(Item item, Player player)
+        {
+            if (player.GetModPlayer<SpectraPlayer>().AutoswingMinions && item.summon && !item.autoReuse)
+            {
+                Main.NewText("C");
+                item.autoReuse = true;
+                givenAutoswing = true;
+                return true;
+            }
+            else if (givenAutoswing && item.summon && !player.GetModPlayer<SpectraPlayer>().AutoswingMinions)
+            {
+                Main.NewText("D");
+                item.autoReuse = false;
+                return true;
+            }
+            return base.UseItem(item, player);
         }
     }
 }
